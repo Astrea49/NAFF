@@ -43,6 +43,10 @@ __all__ = ()
 TOKEN = os.environ["BOT_TOKEN"]
 
 
+if not TOKEN:
+    pytest.skip("No BOT_TOKEN environment variable.")
+
+
 @pytest.fixture(scope="session")
 def event_loop() -> AbstractEventLoop:
     return asyncio.get_event_loop()
