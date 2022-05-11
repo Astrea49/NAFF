@@ -44,7 +44,7 @@ TOKEN = os.environ["BOT_TOKEN"]
 
 
 if not TOKEN:
-    pytest.skip("No BOT_TOKEN environment variable.")
+    pytest.skip("No BOT_TOKEN environment variable.", allow_module_level=True)
 
 
 @pytest.fixture(scope="session")
