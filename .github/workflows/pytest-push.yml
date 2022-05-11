@@ -4,6 +4,17 @@ jobs:
   pytest:
     name: runner / pytest tests
     runs-on: ubuntu-latest
+    if: ${{ secrets.BOT_TOKEN != null }}
+    strategy:
+      max-parallel: 1
+      matrix:
+        extras:
+          - .
+          - .[speedup]
+          - .[voice]
+          - .[all]
+          - .[docs]
+
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python 3.10
