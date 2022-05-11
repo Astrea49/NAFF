@@ -106,6 +106,8 @@ log = logging.getLogger(logger_name)
 
 __all__ = ("Client",)
 
+# hi, this is a comment
+
 
 class Client(
     processors.ChannelEvents,
